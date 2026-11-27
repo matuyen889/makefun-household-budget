@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinTrack Home — Intelligent Family & Household Budgeting</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">FinTrack Home</span>
+          <span class="brand-sub">The Miller Family Budget</span>
+        </div>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="#/dashboard" class="nav-link active" data-route="dashboard">Dashboard</a>
+        <a href="#/expenses" class="nav-link" data-route="expenses">Cashflow & Ledger</a>
+        <a href="#/goals" class="nav-link" data-route="goals">Savings Goals</a>
+        <a href="#/simulator" class="nav-link" data-route="simulator">Resilience Simulator</a>
+      </nav>
+
+      <div class="header-right">
+        <span class="period-pill">Nov 2026</span>
+        <button class="btn-primary-sm" id="btnHeaderAction" onclick="document.getElementById('txModal').classList.add('open')">+ Quick Log</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Mount -->
+  <main id="appMount" class="app-main"></main>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="bottom-nav">
+    <a href="#/dashboard" class="bottom-nav-item active" data-route="dashboard">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+      <span>Overview</span>
+    </a>
+    <a href="#/expenses" class="bottom-nav-item" data-route="expenses">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+      <span>Expenses</span>
+    </a>
+    <a href="#/goals" class="bottom-nav-item" data-route="goals">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+      <span>Goals</span>
+    </a>
+    <a href="#/simulator" class="bottom-nav-item" data-route="simulator">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+      <span>Simulate</span>
+    </a>
+  </nav>
+
+  <!-- Add Expense Modal -->
+  <div id="txModal" class="modal-backdrop">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Log Household Expense</h3>
+        <button id="btnCloseModal" class="modal-close">&times;</button>
+      </div>
+      <form id="txForm" class="modal-body">
+        <div class="form-group">
+          <label for="txDesc">Description</label>
+          <input type="text" id="txDesc" placeholder="e.g. Weekly Produce Market" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="txAmt">Amount ($)</label>
+            <input type="number" id="txAmt" step="0.01" min="0.01" placeholder="0.00" required>
+          </div>
+          <div class="form-group">
+            <label for="txCat">Category</label>
+            <select id="txCat">
+              <option value="groceries">Groceries & Household</option>
+              <option value="housing">Housing & Mortgage</option>
+              <option value="utilities">Utilities & Internet</option>
+              <option value="transport">Transport & EV</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="education">Kids & Education</option>
+              <option value="dining">Family Dining</option>
+              <option value="entertainment">Entertainment</option>
+              <option value="personal">Personal Care</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="txMember">Family Member</label>
+          <select id="txMember">
+            <option value="Shared">Shared Family</option>
+            <option value="Marcus">Marcus</option>
+            <option value="Elena">Elena</option>
+            <option value="Leo (10)">Leo</option>
+            <option value="Maya (7)">Maya</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-primary w-full">Save Expense to Budget</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

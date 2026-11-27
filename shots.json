@@ -1,0 +1,6 @@
+[
+  { "file": "1-budget-overview.png", "path": "#/dashboard", "viewport": { "width": 1280, "height": 800 } },
+  { "file": "2-cashflow-analytics.png", "path": "#/expenses", "viewport": { "width": 1280, "height": 800 } },
+  { "file": "3-savings-goals.png", "path": "#/goals", "viewport": { "width": 1280, "height": 800 } },
+  { "file": "4-mobile-app.png", "path": "#/dashboard", "viewport": { "width": 390, "height": 844 } }
+]
